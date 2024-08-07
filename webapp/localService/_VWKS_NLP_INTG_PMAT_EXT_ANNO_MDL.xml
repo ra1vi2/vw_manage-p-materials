@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="Org.OData.Capabilities.V1"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/></edmx:Reference>
+	<edmx:Reference Uri="../../../vwks/nlp_intg_pmat_ext_manage_srv/$metadata"><edmx:Include Namespace="NLP_INTG_PMAT_EXT_MANAGE_SRV" Alias="SAP"/></edmx:Reference>
+	<edmx:DataServices>
+		<Schema Namespace="com.sap.vwks.nlp_intg_pmat_ext_anno_mdl.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COL_HEADERTPType/KeyLink"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COL_HEADERTPType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Color Header"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="KeyLink"/></Record>
+						</PropertyValue>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="KeyLink"/></Record>
+						</PropertyValue>
+					</Record>
+					<Annotation Term="Core.Messages">
+						<Collection>
+							<Record><PropertyValue Property="message" String="UI.HEADERINFO: TypeNamePlural is mandatory"/><PropertyValue Property="severity" String="error"/></Record>
+						</Collection>
+					</Annotation>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CompanyCode"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Responsible Purchaser"/><PropertyValue Property="Value" Path="PurchaseGrp"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="SOP"/><PropertyValue Property="Value" Path="Sop"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="EOP"/><PropertyValue Property="Value" Path="Eop"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Project"/><PropertyValue Property="Value" Path="project"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant">
+					<Record>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType"><PropertyValue Property="Property" PropertyPath="KeyLink"/><PropertyValue Property="Descending" Bool="false"/></Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="GroupBy">
+							<Collection>
+								<PropertyPath>KeyLink</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<PropertyPath>KeyLink</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/DocTypeText"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/PurchasingGroupName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/Status"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/ActionTypeDes"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/FullName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/Enti_head"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/Enti_item"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/Enti_contact"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/Avon_head"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/Avon_item"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/Avon_contact"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/RFCDPlant"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/RFCDExiDL"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/RFCDCntr"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/RFCDHeader"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/ObjectNodeType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/NoteTypes"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/PCFActiveKey"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/PCFDraftKey"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/Create_dist_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/Create_dist_edit_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/ResultLongtext"><Annotation Term="UI.MultiLineText"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType">
+				<Annotation Term="UI.HeaderFacets">
+					<Collection>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="ID" String="HEADINFO"/><PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#HEADINFO"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="General Information"/><PropertyValue Property="ID" String="HeaderDetails"/><PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#HeaderDetails"/></Record>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="Organization Data"/><PropertyValue Property="ID" String="OrgData"/><PropertyValue Property="Target" AnnotationPath="to_RFCDHDR/@UI.Identification"/><Annotation Term="UI.Hidden" Path="RFCDHeader"/></Record>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="eNTI Header"/><PropertyValue Property="ID" String="ENTIHeader"/><PropertyValue Property="Target" AnnotationPath="to_ENTIHDR/@UI.Identification"/><Annotation Term="UI.Hidden" Path="Enti_head"/></Record>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="eNTI Item"/><PropertyValue Property="ID" String="ENTIitem"/><PropertyValue Property="Target" AnnotationPath="to_ENTITM/@UI.LineItem"/><Annotation Term="UI.Hidden" Path="Enti_item"/></Record>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="Header Data"/><PropertyValue Property="ID" String="OrgDataCol"/><PropertyValue Property="Target" AnnotationPath="to_ColHeader/@UI.Identification"/><Annotation Term="UI.Hidden" Path="Avon_head"/></Record>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="Existing Colours"/><PropertyValue Property="ID" String="EXT_COLOR"/><PropertyValue Property="Target" AnnotationPath="to_EXISTINGCOLOR/@UI.LineItem"/><Annotation Term="UI.Hidden" Path="Avon_item"/></Record>
+						<Record Type="UI.ReferenceFacet"><PropertyValue Property="Label" String="Available Dist Lines"/><PropertyValue Property="ID" String="Dist_No"/><PropertyValue Property="Target" AnnotationPath="to_RFCDEXIDL/@UI.LineItem"/><Annotation Term="UI.Hidden" Path="Avon_head"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="HEADINFO">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="StatusText"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="HeaderDetails">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Material"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MatDesc"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DocumentNumber"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DocumentType"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Supplier"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ActionType"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="RequestType"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PurchaseGrp"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ResultLongtext"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="P-Material Document"/><PropertyValue Property="TypeNamePlural" String="P-Material Documents"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ActionTypeDes"/></Record>
+						</PropertyValue>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="KeyLink"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForAction"><PropertyValue Property="Label" String="Create Distribution Lines"/><PropertyValue Property="Action"
+							String="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.VWKS_NLP_INTG_PMAT_EXT_MANAGE_SRV_Entities/xVWKSxNLP_C_PMAT_COMMON_HDRCreate_dist"/><PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/><Annotation Term="UI.Hidden" Path="RFCDHeader"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataFieldForAction"><PropertyValue Property="Label" String="Create Distribution Lines and Edit"/><PropertyValue Property="Action"
+							String="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.VWKS_NLP_INTG_PMAT_EXT_MANAGE_SRV_Entities/A8884F387375D7B99DFA479FCreate_dist_edit"/><PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/><Annotation Term="UI.Hidden" Path="RFCDHeader"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DocumentType"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Material"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MatDesc"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PurchaseGrp"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="StatusText"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ActionType"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="RequestType"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CreationDatetime"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Supplier"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ResultLongtext"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="KeyLink"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DocumentNumber"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="DocumentType"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Material"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="MatDesc"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PurchaseGrp"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Status"/><PropertyValue Property="Value" Path="StatusText"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ActionType"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="RequestType"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CreationDatetime"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Supplier"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CreatedBy"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant">
+					<Record>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType"><PropertyValue Property="Property" PropertyPath="KeyLink"/><PropertyValue Property="Descending" Bool="false"/></Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="GroupBy">
+							<Collection>
+								<PropertyPath>KeyLink</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<PropertyPath>KeyLink</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Visualizations">
+							<Collection>
+								<AnnotationPath>@UI.LineItem</AnnotationPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>Material</PropertyPath>
+						<PropertyPath>PurchaseGrp</PropertyPath>
+						<PropertyPath>StatusText</PropertyPath>
+						<PropertyPath>ActionType</PropertyPath>
+						<PropertyPath>Supplier</PropertyPath>
+					</Collection>
+				</Annotation>
+				<Annotation Term="Communication.Contact">
+					<Record><PropertyValue Property="fn" Path="FullName"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_ENTI_HDRType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="eNTI Header"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="KeyLink"/></Record>
+						</PropertyValue>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="KeyLink"/></Record>
+						</PropertyValue>
+					</Record>
+					<Annotation Term="Core.Messages">
+						<Collection>
+							<Record><PropertyValue Property="message" String="UI.HEADERINFO: TypeNamePlural is mandatory"/><PropertyValue Property="severity" String="error"/></Record>
+						</Collection>
+					</Annotation>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="RfxDesc"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CompCode"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="EntiMatGroup"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="EntiNoteType"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="EntiNoteContent"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="RfxDesc"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CompCode"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="EntiMatGroup"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="EntiNoteType"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="EntiNoteContent"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant">
+					<Record>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType"><PropertyValue Property="Property" PropertyPath="KeyLink"/><PropertyValue Property="Descending" Bool="false"/></Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="GroupBy">
+							<Collection>
+								<PropertyPath>KeyLink</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<PropertyPath>KeyLink</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Visualizations">
+							<Collection>
+								<AnnotationPath>@UI.DataPoint</AnnotationPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_ENTI_ITEMType/Add_new_dl_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_ENTI_ITEMType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="eNTI Item"/><PropertyValue Property="TypeNamePlural" String="eNTI Items"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="KeyLink"/></Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ItemDesc"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="NoteType"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="NoteContent"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataFieldForAction"><PropertyValue Property="Label" String="Add new distribution lines"/><PropertyValue Property="Action"
+							String="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.VWKS_NLP_INTG_PMAT_EXT_MANAGE_SRV_Entities/xVWKSxNLP_C_PMAT_ENTI_ITEMAdd_new_dl"/><PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ItemDesc"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="NoteType"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="NoteContent"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant">
+					<Record>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType"><PropertyValue Property="Property" PropertyPath="KeyLink"/><PropertyValue Property="Descending" Bool="false"/></Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="GroupBy">
+							<Collection>
+								<PropertyPath>KeyLink</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<PropertyPath>KeyLink</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Visualizations">
+							<Collection>
+								<AnnotationPath>@UI.LineItem</AnnotationPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_EXISTNG_COLORType/KeyLink"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_EXISTNG_COLORType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Existing Colors"/><PropertyValue Property="TypeNamePlural" String="Existing Colors"/></Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="material"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="matdesc"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_CONTRACTType/Supplier"><Annotation Term="Common.SemanticObject" String="Supplier"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_CONTRACTType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="Central Contract"/><PropertyValue Property="TypeNamePlural" String="Central Contracts"/></Record>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Selected"/><PropertyValue Property="Value" Path="Selected"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Supplier"/><PropertyValue Property="Value" Path="Supplier"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Type"/><PropertyValue Property="Value" Path="DocType"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Valid From"/><PropertyValue Property="Value" Path="ValidFrom"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Valid To"/><PropertyValue Property="Value" Path="ValidTo"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="TargetQty"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Deleted"/><PropertyValue Property="Value" Path="DelInd"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/KeyLink"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/ContractItem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/DistributionNum"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/RefContractNum"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/RefContractItem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/RefDistributionNum"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/ConnectedSystem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/Add_dist_line_ac"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/LaunchDate_fc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/Plant_fc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/ProjectId_fc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/ReferencePlant_fc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/Sop_fc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/Sop1_fc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/Sop2_fc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/Sop3_fc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/Sop4_fc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/Supplier_fc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/Uom_fc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/ValidFrom_fc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType/ValidTo_fc"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_ExisDLTPType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Plant"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Central Contract"/><PropertyValue Property="Value" Path="ContractNum"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Supplier"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProjectId"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="LaunchDate"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Sop"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Sop1"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Sop2"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Sop3"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Sop4"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="NewIndicator"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Uom"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Quota"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ReferencePlant"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ValidFrom"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ValidTo"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_HEADERTPType/KeyLink"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_HEADERTPType/PurchaserComment"><Annotation Term="UI.MultiLineText"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_HEADERTPType">
+				<Annotation Term="UI.HeaderInfo">
+					<Record><PropertyValue Property="TypeName" String="RFCD Header"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="KeyLink"/></Record>
+						</PropertyValue>
+						<PropertyValue Property="Description">
+							<Record Type="UI.DataField"><PropertyValue Property="Value" Path="KeyLink"/></Record>
+						</PropertyValue>
+					</Record>
+					<Annotation Term="Core.Messages">
+						<Collection>
+							<Record><PropertyValue Property="message" String="UI.HEADERINFO: TypeNamePlural is mandatory"/><PropertyValue Property="severity" String="error"/></Record>
+						</Collection>
+					</Annotation>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CompanyCode"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Local Purchaser"/><PropertyValue Property="Value" Path="PurchaseGrp"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PurchOrg"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ConnectdSystem"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Label" String="Trigger"/><PropertyValue Property="Value" Path="TriggerText"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="PurchaserComment"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant">
+					<Record>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType"><PropertyValue Property="Property" PropertyPath="KeyLink"/><PropertyValue Property="Descending" Bool="false"/></Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="GroupBy">
+							<Collection>
+								<PropertyPath>KeyLink</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="RequestAtLeast">
+							<Collection>
+								<PropertyPath>KeyLink</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_PLANTTPType/KeyLink"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_PLANTTPType/CompanyCode"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_PLANTTPType/ConnectdSystem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_RFCD_PLANTTPType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Plant"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ProjectID"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="LaunchDate"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="Sop"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SopPlus1"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SopPlus2"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SopPlus3"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="SopPlus4"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_ORD_I_DH_USERSType">
+				<Annotation Term="Communication.Contact">
+					<Record><PropertyValue Property="fn" Path="FullName"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_CntrlPurContrMaterialVHType/OpnCtlgItemID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_CntrlPurContrMaterialVHType/Language"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_CntrlPurContrMaterialVHType/CompanyCode"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_CntrlPurContrMaterialVHType/OpnCtlgWebServiceID"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_CntrlPurContrMaterialVHType/IsBusinessPurposeCompleted"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_MM_SupplierValueHelpType/SortField"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_MM_SupplierValueHelpType/FirstName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_MM_SupplierValueHelpType/LastName"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_MM_SupplierValueHelpType/OrganizationBPName1"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_MM_SupplierValueHelpType/OrganizationBPName2"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_MM_SupplierValueHelpType/OrganizationBPName3"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_MM_SupplierValueHelpType/OrganizationBPName4"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_MM_SupplierValueHelpType/AuthorizationGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_MM_SupplierValueHelpType/SupplierAccountGroup"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_MM_SupplierValueHelpType">
+				<Annotation Term="Communication.Contact">
+					<Record>
+						<PropertyValue Property="adr">
+							<Collection>
+								<Record><PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred"/><PropertyValue Property="country" Path="Country"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Communication.Address" Qualifier="pref">
+					<Record><PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred"/><PropertyValue Property="country" Path="Country"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_ProcmtHubCompanyCodeVHType/ProcurementHubSourceSystem"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_ProcmtHubPurgGroupVHType/EmailAddress"><Annotation Term="Communication.IsEmailAddress"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_ProcmtHubPurgGroupVHType/ProcurementHubSourceSystem"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_ProcmtHubPurgGroupVHType">
+				<Annotation Term="Communication.Contact">
+					<Record>
+						<PropertyValue Property="email">
+							<Collection>
+								<Record><PropertyValue Property="address" Path="EmailAddress"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.C_ProcmtHubPurgOrgVHType/ProcurementHubSourceSystem"><Annotation Term="UI.HiddenFilter"/></Annotations>
+			<Annotations Target="_Entities">
+				<Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+					<Record Type="Org.OData.Capabilities.V1.BatchSupportType"><PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__CodeList.CurrencyCodes">
+					<Record><PropertyValue Property="Url" String="../../iwbep/common;v=0001/$metadata"/><PropertyValue Property="CollectionPath" String="Currencies"/></Record>
+				</Annotation>
+				<Annotation Term="SAP__CodeList.UnitsOfMeasure">
+					<Record><PropertyValue Property="Url" String="../../iwbep/common;v=0001/$metadata"/><PropertyValue Property="CollectionPath" String="UnitsOfMeasure"/></Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

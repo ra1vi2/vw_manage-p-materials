@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" 
+    xmlns:smartTable="sap.ui.comp.smarttable" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:html="http://www.w3.org/1999/xhtml" height="100%">
+	<Dialog id="idSelectEntiItemDialogBox" title="{i18n>SelectEntiItemTitle}">
+		<content>
+            <smartFilterBar:SmartFilterBar id="idSelectEntiItemSmartFilterBar"
+                showClearButton="true"
+                entitySet="xVWKSxNLP_SP_I_GET_PMAT_ENTI" >
+            </smartFilterBar:SmartFilterBar> 
+        </content>
+        <content>
+            <smartTable:SmartTable id="idSelectEntiItemSmartTable"
+                requestAtLeastFields="WorkItemID,SourcingProjectUUID,MaterialNumber"                                                
+                smartFilterId="selectEntiItemDialog--idSelectEntiItemSmartFilterBar"                
+                entitySet="xVWKSxNLP_SP_I_GET_PMAT_ENTI" tableType="ResponsiveTable" useVariantManagement="false" useTablePersonalisation="true"
+                tableBindingPath="to_CreateSP" header="{i18n>WorkItems}" showRowCount="true" enableAutoBinding="true" demandPopin="true"
+                useExportToExcel="false">
+					<Table id="idSelectEntiItemTable" growing="true" mode="MultiSelect" 
+                        growingScrollToLoad="true" growingThreshold="25"
+                        class="sapFDynamicPageAlignContent"
+                        sticky="ColumnHeaders" >
+					</Table> 
+            </smartTable:SmartTable>
+		</content>
+		<buttons>
+			<Button id="idCreateSourcingProjectButton" text="{i18n>CreateSourcingProjectButton}" press="handleOpenCreateSrcProjMessagePopup" type="Emphasized" tooltip="{i18n>CreateSourcingProjectButton}"/>
+			<Button id="idEntiItemsCancelButton" text="{i18n>SelectEntiItemDialogCancelButton}" press="onCancelSelectEntiItemDialog"
+             tooltip="{i18n>SelectEntiItemDialogCancelButton}"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

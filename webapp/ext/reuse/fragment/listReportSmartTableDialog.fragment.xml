@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:smarttable="sap.ui.comp.smarttable" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:core="sap.ui.core">
+	<Dialog contentWidth="80%" contentHeight="60%" title="{i18n>ListReportSmartTableDialogTitle}" horizontalScrolling="false" verticalScrolling="true">
+		<VBox fitContainer="true">
+			<smartFilterBar:SmartFilterBar id="idListReportSmartFilterBar" entitySet="xVWKSxNLP_C_PMAT_COMMON_HDR" initialise="onListReportSmartFilterBarInitialise" useToolbar="false"
+				showFilterConfiguration="false"></smartFilterBar:SmartFilterBar>
+			<smarttable:SmartTable id="idListReportSmartTable" header="{i18n>ListReportSmartTableHeader}" tableType="ResponsiveTable" beforeRebindTable="onListReportSmartTableBeforeRebind"
+				entitySet="xVWKSxNLP_C_PMAT_COMMON_HDR" class="sapUiResponsiveContentPadding" enableAutoBinding="true" useExportToExcel="false" useVariantManagement="false"
+				useTablePersonalisation="false" showFullScreenButton="true"></smarttable:SmartTable>
+		</VBox>
+		<buttons>
+            <Button id="idNotifyDevelopmentBtn" text="{i18n>ListReportSmartTableNotifyDevelopment}" tooltip="{i18n>ListReportSmartTableNotifyDevelopment}" visible="{listReportModel>/notifyDevelopment}" enabled="{listReportModel>/enableNotifyDevelopment}" press="onNotifyDevelopment"/>
+			<Button id="idCopyContractBundleBtn" text="{i18n>ListReportSmartTableCopyContractBundle}" tooltip="{i18n>ListReportSmartTableCopyContractBundle}" visible="{listReportModel>/copyContractBundle}"  enabled="{listReportModel>/enableCopyContractBundle}" press="onCopyContractBundle"/>
+			<Button id="idCloseBtn" text="{i18n>ListReportSmartTableCancel}" press="onCloseDialog" tooltip="{i18n>ListReportSmartTableCancel}"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

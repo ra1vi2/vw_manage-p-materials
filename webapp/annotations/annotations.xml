@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/opu/odata/vwks/NLP_INTG_PMAT_EXT_MANAGE_SRV/$metadata">
+		<edmx:Include Alias="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV" Namespace="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470974/Common.xml?api=v2">
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="vwks.nlp.s2p.mm.pmaterial.manage.NLP_INTG_PMAT_EXT_MANAGE_SRV">
+			<!--===============================================================================
+                Entity Type from chosen collection 
+                ================================================================================-->
+			
+			<Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_TECHCHG_HDRType">
+				<Annotation Term="Common.SideEffects" Qualifier="PriceReferenceDateChanged">
+					<Record Type="Common.SideEffectsType">
+						<PropertyValue Property="SourceProperties">
+							<Collection>
+								<PropertyPath>price_ref_date</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="TargetProperties">
+							<Collection>
+								<PropertyPath>to_PMATTECHCHG/to_PMatTCom/PriceNew</PropertyPath>
+								<PropertyPath>to_PMATTECHCHG/to_PMatTCom/price_delta_per</PropertyPath>
+								<PropertyPath>to_PMATTECHCHG/to_PMatTCom/PriceDelta</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+            <Annotations Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_TechChg_ComTPType">
+				<Annotation Term="Common.SideEffects" Qualifier="PurchasingDocumentChanged">
+					<Record Type="Common.SideEffectsType">
+						<PropertyValue Property="SourceProperties">
+							<Collection>
+								<PropertyPath>Ebeln</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="TargetProperties">
+							<Collection>
+								<PropertyPath>Supplier</PropertyPath>
+								<PropertyPath>SupplierFull</PropertyPath>
+								<PropertyPath>Ebeln_fc</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,483 @@
+{
+    "_version": "1.8.0",
+    "sap.app": {
+        "id": "vwks.nlp.s2p.mm.pmaterial.manage",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "tags": {
+            "keywords": []
+        },
+        "ach": "XX-PROJ-CDP-TEST-808",
+        "resources": "resources.json",
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/vwks/NLP_INTG_PMAT_EXT_MANAGE_SRV/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [
+                        "_VWKS_NLP_INTG_PMAT_EXT_ANNO_MDL",
+                        "localAnnotations"
+                    ],
+                    "localUri": "localService/metadata.xml"
+                }
+            },
+            "_VWKS_NLP_INTG_PMAT_EXT_ANNO_MDL": {
+                "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='%2FVWKS%2FNLP_INTG_PMAT_EXT_ANNO_MDL',Version='0001')/$value/",
+                "type": "ODataAnnotation",
+                "settings": {
+                    "localUri": "localService/_VWKS_NLP_INTG_PMAT_EXT_ANNO_MDL.xml"
+                }
+            },
+            "localAnnotations": {
+                "uri": "annotations/annotations.xml",
+                "type": "ODataAnnotation",
+                "settings": {
+                    "localUri": "annotations/annotations.xml"
+                }
+            },
+            "MCPCService": {
+                "uri": "/sap/opu/odata/sap/MM_PUR_CNTRL_CTR_MAINTAIN_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/metadata.xml"
+                }
+            }
+        },
+        "offline": false,
+        "sourceTemplate": {
+            "id": "ui5template.smartTemplate",
+            "version": "1.40.12"
+        },
+        "crossNavigation": {
+            "inbounds": {},
+            "outbounds": {
+                "PCF": {
+                    "semanticObject": "CommunicationRequest",
+                    "action": "manage"
+                },
+                "MCPC": {
+                    "semanticObject": "CentralPurchaseContract",
+                    "action": "manage"
+                },
+                "Supplier": {
+                    "semanticObject": "Supplier",
+                    "action": "displayFactSheet"
+                },
+                "SourcingProject": {
+                    "semanticObject": "SourcingProject",
+                    "action": "manage"
+                },
+                "MassChange": {
+                    "semanticObject": "CentralPurchaseContract",
+                    "action": "changeMultiple"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_fiori_3"
+        ]
+    },
+    "sap.ui5": {
+        "resources": {
+            "js": [],
+            "css": []
+        },
+        "dependencies": {
+            "minUI5Version": "1.98.0",
+            "libs": {
+                "sap.suite.ui.generic.template": {
+                    "lazy": false
+                },
+                "sap.ui.core": {
+                    "lazy": false
+                },
+                "sap.ui.generic.app": {
+                    "lazy": false
+                },
+                "sap.nw.core.gbt.notes.lib.reuse": {
+                    "lazy": true
+                },
+                "vwks.nlp.s2p.mm.reuse.lib": {
+                    "lazy": false
+                }
+            },
+            "components": {
+                "sap.se.mi.plm.lib.attachmentservice.attachment.components.stcomponent": {
+                    "lazy": true
+                }
+            }
+        },
+        "componentUsages": {
+            "attachmentReuseComponent": {
+                "name": "sap.se.mi.plm.lib.attachmentservice.attachment.components.stcomponent",
+                "settings": {}
+            }
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            },
+            "i18n|sap.suite.ui.generic.template.ListReport|xVWKSxNLP_C_PMAT_COMMON_HDR": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/ListReport/xVWKSxNLP_C_PMAT_COMMON_HDR/i18n.properties"
+            },
+            "i18n|sap.suite.ui.generic.template.ObjectPage|xVWKSxNLP_C_PMAT_COMMON_HDR": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/ObjectPage/xVWKSxNLP_C_PMAT_COMMON_HDR/i18n.properties"
+            },
+            "i18n|sap.suite.ui.generic.template.ObjectPage|xVWKSxNLP_FND_PMAT_Status_vh": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/ObjectPage/xVWKSxNLP_FND_PMAT_Status_vh/i18n.properties"
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    }
+                }
+            },
+            "MCPC": {
+                "dataSource": "MCPCService"
+            }
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.viewExtensions": {
+                    "sap.suite.ui.generic.template.ObjectPage.view.Details": {
+                        "AfterFacet|xVWKSxNLP_C_PMAT_COMMON_HDR|OrgData": {
+                            "type": "XML",
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "vwks.nlp.s2p.mm.pmaterial.manage.ext.fragment.DistributionRequest",
+                            "sap.ui.generic.app": {
+                                "title": "{@i18n>DistributionRequestFacet}"
+                            }
+                        },
+                        "TreeTableColumnsExtension|xVWKSxNLP_C_PMAT_TechChg_ComTP|Compn": {
+                            "type": "XML",
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "vwks.nlp.s2p.mm.pmaterial.manage.ext.fragment.TechnicalChangeCustomColumns"
+                        },
+                        "AfterFacet|xVWKSxNLP_C_PMAT_COMMON_HDR|EXT_COLOR": {
+                            "type": "XML",
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "vwks.nlp.s2p.mm.pmaterial.manage.ext.fragment.DistributionRequestColorAutomation",
+                            "sap.ui.generic.app": {
+                                "title": "{@i18n>DistributionRequestFacet}"
+                            }
+                        }
+                    },
+                    "sap.suite.ui.generic.template.ListReport.view.ListReport": {}
+                },
+                "sap.ui.controllerExtensions": {
+                    "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+                        "controllerName": "vwks.nlp.s2p.mm.pmaterial.manage.ext.controller.ListReportExt",
+                        "sap.ui.generic.app": {
+                            "xVWKSxNLP_C_PMAT_COMMON_HDR": {
+                                "EntitySet": "xVWKSxNLP_C_PMAT_COMMON_HDR",
+                                "Actions": {
+                                    "ActionxVWKSxNLP_C_PMAT_COMMON_HDRItem1": {
+                                        "id": "idSetStatusAction",
+                                        "text": "{@i18n>ActionxVWKSxNLP_C_PMAT_COMMON_HDRItem1}",
+                                        "press": "onClickSetStatusAction",
+                                        "requiresSelection": true
+                                    },
+                                    "ActionxVWKSxNLP_C_PMAT_COMMON_HDRItem2": {
+                                        "id": "idForwardAction",
+                                        "text": "{@i18n>ActionxVWKSxNLP_C_PMAT_COMMON_HDRItem2}",
+                                        "press": "onClickForwardAction",
+                                        "requiresSelection": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "sap.suite.ui.generic.template.ObjectPage.view.Details": {
+                        "controllerName": "vwks.nlp.s2p.mm.pmaterial.manage.ext.controller.ObjectPageExt",
+                        "sap.ui.generic.app": {
+                            "xVWKSxNLP_C_PMAT_COMMON_HDR": {
+                                "EntitySet": "xVWKSxNLP_C_PMAT_COMMON_HDR",
+                                "Header": {
+                                    "Actions": {
+                                        "CopyContractAndEdit": {
+                                            "id": "idCopyContractAndEditButton",
+                                            "text": "{{CopyContractAndEdit}}",
+                                            "press": "onPressCopyContractAndEdit",
+                                            "determining": true
+                                        },
+                                        "CopyContract": {
+                                            "id": "idCopyContractButton",
+                                            "text": "{{CopyContract}}",
+                                            "press": "onPressCopyContract",
+                                            "determining": true
+                                        },
+                                        "ProcessMultipleWorkItems": {
+                                            "id": "idProcessMultipleWorkItemsButton",
+                                            "text": "{{ProcessMultipleWorkItems}}",
+                                            "press": "onPressProcessMultipleWorkItems",
+                                            "determining": true
+                                        },
+                                        "CreateCCTRDistributionLine": {
+                                            "id": "idCCTRDLAction",
+                                            "text": "{{CreateDistributionLine}}",
+                                            "press": "onClickCreateDLAction",
+                                            "determining": true
+                                        },
+                                        "CreateCCTRDistributionLineAndEdit": {
+                                            "id": "idCCTRDLAndEditAction",
+                                            "text": "{{CreateDistributionLineAndEdit}}",
+                                            "press": "onClickCreateDLActionAndEdit",
+                                            "determining": true
+                                        },
+                                        "Releaseforevaluation": {
+                                            "id": "idReleaseforevaluation",
+                                            "text": "{{Releaseforevaluation}}",
+                                            "press": "onClickReleaseforevaluation",
+                                            "determining": true
+                                        },
+                                        "CompleteEvaluation": {
+                                            "id": "idCompleteEvaluation",
+                                            "text": "{{CompleteEvaluation}}",
+                                            "press": "onClickCompleteEvaluation",
+                                            "determining": true
+                                        },
+                                        "Sendforapproval": {
+                                            "id": "idSendforapproval",
+                                            "text": "{{Sendforapproval}}",
+                                            "press": "onClickSendforapproval",
+                                            "determining": true
+                                        },
+                                        "SendtoSupplier": {
+                                            "id": "idSendtoSupplier",
+                                            "text": "{@i18n>SendtoSupplier}",
+                                            "press": "onClickSendtoSupplier",
+                                            "determining": true
+                                        },
+                                        "CreateSourcingProject": {
+                                            "id": "idCreateSourcingProjectButton",
+                                            "text": "{{CreateSourcingProject}}",
+                                            "press": "onPressCreateSrcgProject",
+                                            "determining": true
+                                        },
+                                        "UpdateSourcingProject": {
+                                            "id": "idUpdateSourcingProjectButton",
+                                            "text": "{{UpdateSourcingProject}}",
+                                            "press": "onPressUpdateSourcingProject",
+                                            "visible": false,
+                                            "determining": true
+                                        },
+                                        "NotifyDevelopement": {
+                                            "id": "idNotifyDevelopement",
+                                            "text": "{{NotifyDevelopement}}",
+                                            "press": "onPressNotifyDevelopement",
+                                            "visible": false,
+                                            "determining": true
+                                        },
+                                        "UpdateContracts": {
+                                            "id": "idUpdateContracts",
+                                            "text": "{{UpdateContracts}}",
+                                            "press": "onPressUpdateContracts",
+                                            "visible": false,
+                                            "determining": true
+                                        }
+                                    }
+                                },
+                                "Sections": {
+                                    "Dist_No": {
+                                        "id": "Dist_No",
+                                        "Actions": {
+                                            "ActionxVWKSxNLP_C_PMAT_COMMON_HDRSections1create": {
+                                                "id": "ActionxVWKSxNLP_C_PMAT_COMMON_HDRSections1createbutton",
+                                                "text": "{@i18n>ActionxVWKSxNLP_C_PMAT_COMMON_HDRSections1createbutton}",
+                                                "press": "onClickCreateNewDistributionLine"
+                                            },
+                                            "ActionxVWKSxNLP_C_PMAT_COMMON_HDRSections1delete": {
+                                                "id": "ActionxVWKSxNLP_C_PMAT_COMMON_HDRSections1deletebutton",
+                                                "text": "{@i18n>ActionxVWKSxNLP_C_PMAT_COMMON_HDRSections1deletebutton}",
+                                                "press": "onClickDeleteDistributionLine"
+                                            }
+                                        }
+                                    },
+                                    "Compn": {
+                                        "id": "Compn",
+                                        "Actions": {
+                                            "CopyTechnicalChange": {
+                                                "id": "ActionCopyTechnicalChange",
+                                                "text": "{@i18n>Copy}",
+                                                "press": "onCopyTechnicalChangePress"
+                                            },
+                                            "DeleteTechnicalChange": {
+                                                "id": "ActionDeleteTechnicalChange",
+                                                "text": "{@i18n>Delete}",
+                                                "press": "onDeleteTechnicalChangePress"
+                                            }
+                                        }
+                                    },
+                                    "EntiProc": {
+                                        "id": "EntiProc",
+                                        "Actions": {
+                                            "ActionxVWKSxNLP_C_PMAT_ENTI_PROCURAddbutton": {
+                                                "id": "ActionxVWKSxNLP_C_PMAT_ENTI_PROCURAddbutton",
+                                                "text": "{@i18n>ActionxVWKSxNLP_C_PMAT_ENTI_AddButton}",
+                                                "press": "onClickAddProcLine"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        }
+    },
+    "sap.ui.generic.app": {
+        "_version": "1.3.0",
+        "settings": {
+            "forceGlobalRefresh": false,
+            "objectPageHeaderType": "Dynamic",
+            "showDraftToggle": false
+        },
+        "pages": {
+            "ListReport|xVWKSxNLP_C_PMAT_COMMON_HDR": {
+                "entitySet": "xVWKSxNLP_C_PMAT_COMMON_HDR",
+                "component": {
+                    "name": "sap.suite.ui.generic.template.ListReport",
+                    "list": true,
+                    "settings": {
+                        "filterSettings": {
+                            "dateSettings": {
+                                "useDateRange": true
+                            }
+                        },
+                        "condensedTableLayout": true,
+                        "multiSelect": true,
+                        "tableSettings": {
+                            "variantManagement": true
+                        }
+                    }
+                },
+                "pages": {
+                    "ObjectPage|xVWKSxNLP_C_PMAT_COMMON_HDR": {
+                        "entitySet": "xVWKSxNLP_C_PMAT_COMMON_HDR",
+                        "component": {
+                            "name": "sap.suite.ui.generic.template.ObjectPage",
+                            "settings": {
+                                "sections": {
+                                    "to_RFCDEXIDL::com.sap.vocabularies.UI.v1.LineItem": {
+                                        "navigationProperty": "to_RFCDEXIDL",
+                                        "entitySet": "xVWKSxNLP_C_PMAT_RFCD_ExisDLTP",
+                                        "createMode": "inline",
+                                        "tableSettings": {
+                                            "multiSelect": true
+                                        }
+                                    },
+                                    "Compn": {
+                                        "navigationProperty": "to_PMATTECHCHG",
+                                        "entitySet": "xVWKSxNLP_C_PMAT_TechChg_ComTP",
+                                        "tableType": "TreeTable"
+                                    }
+                                }
+                            }
+                        },
+                        "embeddedComponents": {
+                            "header::Notes": {
+                                "id": "header::Notes",
+                                "componentName": "sap.nw.core.gbt.notes.lib.reuse.notes4smarttemplate",
+                                "title": "{{NotesFacet}}",
+                                "settings": {
+                                    "objectId": "{KeyLink}",
+                                    "objectNodeType": "{ObjectNodeType}",
+                                    "draftUUID": "{DraftUUID}",
+                                    "noteTypes": "{path:'NoteTypes', formatter:'vwks.nlp.s2p.mm.pmaterial.manage.utils.Formatter.returnNotesJSON'}"
+                                }
+                            },
+                            "simple::Attachments": {
+                                "id": "simple::Attachments",
+                                "componentUsage": "attachmentReuseComponent",
+                                "title": "{{Attachments}}",
+                                "settings": {
+                                    "mode": "{= ${ui>/editable}?'C':'D'}",
+                                    "objectType": "/VWKS/ENTI",
+                                    "sapObjectNodeType": "/VWKS/NLP_ENTI",
+                                    "sapObjectType": "/VWKS/ENTI",
+                                    "objectKey": "{KeyLink}",
+                                    "isGuid": true,
+                                    "attributeHandling": {
+                                        "_VisibleAttributes": {
+                                            "UPLOADEDBY": true,
+                                            "UPLOADEDON": true,
+                                            "FILESIZE": true,
+                                            "ENABLELINK": true,
+                                            "ATTACHMENTSTATUS": true,
+                                            "ATTACHMENTTITLE": true,
+                                            "SOURCE": false,
+                                            "DIRDETAILS": true
+                                        },
+                                        "_VisibleActions": {
+                                            "DOWNLOAD": true,
+                                            "RENAME": false,
+                                            "DELETE": false,
+                                            "ADD": false,
+                                            "ADDURL": false
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "pages": {
+                            "ObjectPage|to_Pmatstatus": {
+                                "navigationProperty": "to_Pmatstatus",
+                                "entitySet": "xVWKSxNLP_FND_PMAT_Status_vh",
+                                "component": {
+                                    "name": "sap.suite.ui.generic.template.ObjectPage"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "sap.fiori": {
+        "registrationIds": [],
+        "archeType": "transactional"
+    },
+    "sap.platform.hcp": {
+        "uri": ""
+    }
+}

@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" >
+	<Dialog id="idSetStatusActionDialog" class="sapUiResponsiveContentPadding"
+		title="{i18n>SetStatusDialogTitle}" draggable="true" showHeader="true" type="Standard">
+		<VBox>
+			<Label text="{i18n>SetStatusInfo}" required="true"/>
+			<RadioButtonGroup id="StatusGroup" selectedIndex="-1" buttons="{/xVWKSxNLP_FND_PMAT_SET_STATUS}" select="onSelectStatus" columns="1" width="100%" class="sapUiMediumMarginBottom">
+				<RadioButton text="{StatusText}"/>
+			</RadioButtonGroup> 
+			<Label text="{i18n>ResultLongText}" labelFor="idResultLongText" required="true"/>
+			<TextArea id="idResultLongText" cols="50" maxLength="200" rows="5" showExceededText="true" required="true" liveChange="onChangeResultLongtext"
+				placeholder="{i18n>ResultLongTextComment}" />
+		</VBox>
+		<buttons>
+			<Button id="idApplyStatusButton" enabled="{settingsModel>/enableApplyStatusButton}" type="Emphasized" press="onChangeStatus" text="{i18n>SetStatusButton}" class="sapUiSmallMarginEnd" tooltip="{i18n>SetStatusButton}"/>
+			<Button id="idCancelStatusButton" press="onCancelChangeStatus" text="{i18n>Cancel}"  tooltip="{i18n>Cancel}"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

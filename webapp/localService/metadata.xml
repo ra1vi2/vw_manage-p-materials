@@ -1,0 +1,92 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='X31205')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV" xml:lang="en"
+			sap:schema-version="1">
+			<EntityType Name="xVWKSxNLP_C_PMAT_COMMON_HDRType" sap:label="Consumption View: P-Mat Common Header" sap:content-version="1">
+				<Key><PropertyRef Name="KeyLink"/></Key><Property Name="KeyLink" Type="Edm.Int64" Nullable="false" sap:label="Key Link"/><Property Name="SenderSysetm" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Sender ID PMat"
+					sap:creatable="false" sap:updatable="false"/><Property Name="DocumentNumber" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Document Number"
+					sap:creatable="false" sap:updatable="false"/><Property Name="DocumentType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Document Type PMat"
+					sap:creatable="false" sap:updatable="false"/><Property Name="Material" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="Material" sap:creatable="false"
+					sap:updatable="false"/><Property Name="MatDesc" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:label="Material Description"
+					sap:creatable="false" sap:updatable="false"/><Property Name="PurchaseGrp" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Purchaser Responsible"
+					sap:creatable="false" sap:updatable="false"/><Property Name="Status" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Status PMat" sap:creatable="false"
+					sap:updatable="false" sap:value-list="standard"/><Property Name="ActionType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Action Type" sap:creatable="false"
+					sap:updatable="false"/><Property Name="CreationDatetime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created On" sap:creatable="false" sap:updatable="false"/><Property Name="Supplier" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Supplier" sap:creatable="false"
+					sap:updatable="false"/><Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By"/><Property Name="ChangeDatetime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Last Changed On"/><Property Name="LastchangedbyUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Changed By"/><NavigationProperty Name="to_Pmatstatus" Relationship="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.assoc_9C84BB326D33A65F27ED54342D55D4CB"
+					FromRole="FromRole_assoc_9C84BB326D33A65F27ED54342D55D4CB" ToRole="ToRole_assoc_9C84BB326D33A65F27ED54342D55D4CB"/></EntityType>
+			<EntityType Name="xVWKSxNLP_FND_PMAT_Status_vhType" sap:label="Status" sap:content-version="1">
+				<Key><PropertyRef Name="Language"/><PropertyRef Name="Status"/></Key><Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Language Key"/><Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Status PMat"/><Property Name="StatusText" Type="Edm.String" MaxLength="60" sap:label="Short Descript."/></EntityType>
+			<Association Name="assoc_9C84BB326D33A65F27ED54342D55D4CB" sap:content-version="1"><End Type="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType" Multiplicity="1"
+				Role="FromRole_assoc_9C84BB326D33A65F27ED54342D55D4CB"/><End Type="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_FND_PMAT_Status_vhType" Multiplicity="*"
+				Role="ToRole_assoc_9C84BB326D33A65F27ED54342D55D4CB"/></Association>
+			<EntityContainer Name="VWKS_NLP_INTG_PMAT_EXT_MANAGE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+				sap:supported-formats="atom json xlsx"><EntitySet Name="xVWKSxNLP_C_PMAT_COMMON_HDR" EntityType="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="xVWKSxNLP_FND_PMAT_Status_vh" EntityType="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_FND_PMAT_Status_vhType"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+				<AssociationSet Name="assoc_9C84BB326D33A65F27ED54342D55D4CB"
+					Association="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.assoc_9C84BB326D33A65F27ED54342D55D4CB" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="xVWKSxNLP_C_PMAT_COMMON_HDR" Role="FromRole_assoc_9C84BB326D33A65F27ED54342D55D4CB"/><End EntitySet="xVWKSxNLP_FND_PMAT_Status_vh" Role="ToRole_assoc_9C84BB326D33A65F27ED54342D55D4CB"/></AssociationSet>
+			</EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm"
+				Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType/Status">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Status"/><PropertyValue Property="CollectionPath" String="xVWKSxNLP_FND_PMAT_Status_vh"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="Status"/><PropertyValue Property="ValueListProperty" String="Status"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Language"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="StatusText"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm"
+				Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.VWKS_NLP_INTG_PMAT_EXT_MANAGE_SRV_Entities"><Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+				<Annotation Term="Aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Rollup" EnumMember="None"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.xVWKSxNLP_C_PMAT_COMMON_HDRType">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>KeyLink</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm"
+				Target="VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV.VWKS.NLP_INTG_PMAT_EXT_MANAGE_SRV_Entities">
+				<Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+					<Record Type="Org.OData.Capabilities.V1.BatchSupportType"><PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/></Record>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/vwks/NLP_INTG_PMAT_EXT_MANAGE_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="https://ldcix31.wdf.sap.corp:44311/sap/opu/odata/vwks/NLP_INTG_PMAT_EXT_MANAGE_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

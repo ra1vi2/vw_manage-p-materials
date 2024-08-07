@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartField="sap.ui.comp.smartfield" >
+	<HBox id="idDocContainer">
+	<smartField:SmartField	id="idDocumentLinkCellEdit" value="{doklink}" visible="{= ${ui>/editable} !== false}"/>
+	<Link id="idDocumentLinkCell" text="{doklink}"  visible="{= ${ui>/editable} === false}" press="handleDocumentLinkPress"/>
+	</HBox>
+</core:FragmentDefinition>

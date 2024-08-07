@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<VBox fitContainer="true">
+		<!--Available Contracts Table-->
+		<smartTable:SmartTable id="idContractSmartTableCA" entitySet="xVWKSxNLP_C_PMAT_RFCD_CONTRACT" tableBindingPath="to_RFCDCNT"
+			tableType="ResponsiveTable" useTablePersonalisation="true" header="{i18n>ContractsTableHeader}" showRowCount="true" 
+			class="sapUiResponsiveContentPadding" useExportToExcel="false" requestAtLeastFields="Selected,CentralPurchaseContract">
+			<Table id="idContractTable" growing="true" mode="{=${ui>/editable} === true ? 'MultiSelect' : 'None'}" selectionChange="onContractsSelection">
+				<columns>
+                    <Column id="idSupplierCOAU">
+						<Text text="{/#xVWKSxNLP_C_PMAT_RFCD_CONTRACTType/Supplier/@sap:label}" tooltip="{/#xVWKSxNLP_C_PMAT_RFCD_CONTRACTType/Supplier/@sap:quickinfo}"/>
+						<customData>
+							<core:CustomData key="p13nData" value='\{"columnKey": "Supplier", "leadingProperty": "Supplier", "columnIndex": "3", "sortProperty": "Supplier", "filterProperty": "Supplier"}'/>
+						</customData>
+					</Column>
+                    <Column id="idContractColumnCOAU">
+						<Text text="{/#xVWKSxNLP_C_PMAT_RFCD_CONTRACTType/DocumentNumber/@sap:label}" tooltip="{/#xVWKSxNLP_C_PMAT_RFCD_CONTRACTType/DocumentNumber/@sap:quickinfo}"/>
+						<customData>
+							<core:CustomData key="p13nData" value='\{"columnKey": "DocumentNumber", "leadingProperty": "DocumentNumber", "columnIndex": "4", "sortProperty": "DocumentNumber", "filterProperty": "DocumentNumber"}'/>
+						</customData>
+					</Column>
+				</columns>
+				<items>
+                    <ColumnListItem id="idSupplierdataCOAU" selected="{=${ui>/editable} === false ? false : ${Selected} }">
+						<cells>
+							<Link id="idSupplierlinkCOAU" text="{Supplier}" press="handleSupplierPress"/>
+							<Link id="idContractLinkCOAU" text="{DocumentNumber}" press="handleDocumentNumberPress"/>
+						</cells>
+					</ColumnListItem>
+                   
+				</items>
+			</Table>
+		</smartTable:SmartTable>
+	</VBox>
+</core:FragmentDefinition>

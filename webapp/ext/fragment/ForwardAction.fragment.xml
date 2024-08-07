@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Dialog id="idForwardActionDialog" class="sapUiResponsiveContentPadding"
+		title="{i18n>ForwardActionDialogTitle}" draggable="true" showHeader="true" type="Standard">
+		<VBox>
+			<Label text="{i18n>PurchasingGroup}" required="true"/>
+			<Input id="idPurchasingGrp" valueHelpRequest="onValueHelpRequest" showValueHelp="true" valueState="{settingsModel>/purchasingGroupValueState}"
+				width="62.5%" valueHelpOnly="false" showTableSuggestionValueHelp="false" liveChange="onTargetPurGrpChange"/>
+			<Label text="{i18n>ForwardComment}" labelFor="idForwardComment" class="sapUiSmallMarginTop"
+				required="false"/>
+			<TextArea id="idForwardComment" cols="80" showExceededText="true" rows="10" maxLength="1000" required="false"
+				placeholder="{i18n>ForwardCommentPlaceholder}" />
+		</VBox>
+		<buttons>
+			<Button id="idApplyForwardButton" enabled="{settingsModel>/enableApplyForwardButton}" type="Emphasized" press="onClickApplyForwardAction" text="{i18n>ForwardButton}" tooltip="{i18n>ForwardButton}"
+				class="sapUiSmallMarginEnd"/>
+			<Button id="idCancelForwardButton" press="onClickForwardActionCancel" text="{i18n>ForwardCancel}" tooltip="{i18n>ForwardButton}"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:core="sap.ui.core">
+	<Dialog id="idAddDistLinesDialog" contentWidth="90%" title="{i18n>AddDistributionLinesDialogTitle}" contentHeight="60%" horizontalScrolling="false" verticalScrolling="true">
+		<VBox fitContainer="true">
+			<smartTable:SmartTable id="idAddDistLinesDialogSmartTable" entitySet="xVWKSxNLP_C_PMAT_RFCD_ExisDLTP" tableBindingPath="to_RFCDEXIDL"
+				tableType="ResponsiveTable" useTablePersonalisation="true" header="{i18n>AddDistLinesDialogSmartTableHeader}" showRowCount="true"
+				enableAutoBinding="true" class="sapUiResponsiveContentPadding" useExportToExcel="false" requestAtLeastFields="RecID">
+				<Table id="idAddDistLinesDialogTable" mode="SingleSelectLeft" selectionChange="onTemplateContractSelection">
+					<!-- <columns>
+						<Column id="idQuotaColumn">
+							<Label text="{i18n>Quota}" required="true"/>
+							<customData>
+								<core:CustomData key="p13nData" value='\{"columnKey": "Quota", "leadingProperty": "Quota", "columnIndex": "12"}'/>
+							</customData>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem id="idDistributionLinesData">
+							<cells>
+								<Text id="idQuotaValue" text="{Quota}"/>
+							</cells>
+						</ColumnListItem>
+					</items> -->
+				</Table>
+			</smartTable:SmartTable>
+		</VBox>
+		<buttons>
+			<Button id="idSelect" type="Emphasized" text="{i18n>Select}" enabled="false" press="onAddLinesDialogSelect" tooltip="{i18n>Select}"/>
+			<Button id="idClose" text="{i18n>Close}" press="onAddLinesDialogClose" tooltip="{i18n>Close}"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

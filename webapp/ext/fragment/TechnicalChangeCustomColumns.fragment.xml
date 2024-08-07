@@ -1,0 +1,66 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" xmlns="sap.m" xmlns:smartfield="sap.ui.comp.smartfield">
+	<!-- Document Number -->
+    <table:Column  id="idDocumentNumberColumn" filterProperty="DocumentNumber" sortProperty="DocumentNumber" width="10rem">
+		<Label id="idDocumentNumberLabel" text="{/#xVWKSxNLP_C_PMAT_TechChg_ComTPType/DocumentNumber/@sap:label}"/>
+		<table:customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "DocumentNumber", "leadingProperty":"DocumentNumber", "columnIndex" : "4", "filterProperty": "DocumentNumber", "sortProperty": "DocumentNumber"}'/>
+		</table:customData>
+		<table:template>
+			<Link  id="idDocNoLink" text="{DocumentNumber}" press="handleDocumentNumberPress" wrapping="false" enabled="{= !${Delete_Ind}}"/>
+		</table:template>
+	</table:Column>
+    <!-- Supplier Full Name -->
+	<table:Column id="idSupplierColumn" filterProperty="SupplierFull" sortProperty="SupplierFull" width="15rem" >
+		<Label id="idSupplierLabel" text="{/#xVWKSxNLP_C_PMAT_TechChg_ComTPType/SupplierFull/@sap:label}"/>
+		<table:customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "SupplierFull", "leadingProperty":"SupplierFull", "columnIndex" : "5", "filterProperty": "SupplierFull", "sortProperty": "SupplierFull"}'/>
+		</table:customData>
+		<table:template>
+			<Link id="idSupplierFullLink" text="{SupplierFull}" press="handleSupplierPress" wrapping="false" enabled="{= !${Delete_Ind}}"/>
+		</table:template>
+	</table:Column>
+
+    <!-- Invest -->
+    <table:Column id="idInvestColumn" filterProperty="Invest" sortProperty="Invest" width="10rem" hAlign="End">
+		<Label id="idInvestLabel" text="{/#xVWKSxNLP_C_PMAT_TechChg_ComTPType/Invest/@sap:label}"/>
+		<table:customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "Invest", "leadingProperty":"Invest", "columnIndex" : "30", "filterProperty": "Invest", "sortProperty": "Invest"}'/>
+		</table:customData>
+		<table:template>
+			<smartfield:SmartField value="{Invest}" editable="{= !${Delete_Ind} &amp;&amp; ${ui>/editable} }" textAlign="End"/>
+		</table:template>
+	</table:Column>
+
+     <!-- StartUpCost -->
+    <table:Column id="idStartUpCostColumn" filterProperty="StartUpCost" sortProperty="StartUpCost" width="10rem" hAlign="End">
+		<Label id="idStartUpCostLabel" text="{/#xVWKSxNLP_C_PMAT_TechChg_ComTPType/StartUpCost/@sap:label}"/>
+		<table:customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "StartUpCost", "leadingProperty":"StartUpCost", "columnIndex" : "32", "filterProperty": "StartUpCost", "sortProperty": "StartUpCost"}'/>
+		</table:customData>
+		<table:template>
+			<smartfield:SmartField value="{StartUpCost}" editable="{= !${Delete_Ind} &amp;&amp; ${ui>/editable} }" textAlign="End"/>
+		</table:template>
+	</table:Column>
+
+<!-- ToolingTime -->
+    <table:Column id="idToolingTimeColumn" filterProperty="ToolingTime" sortProperty="ToolingTime" width="10rem" hAlign="End">
+		<Label id="idToolingTimeLabel" text="{/#xVWKSxNLP_C_PMAT_TechChg_ComTPType/ToolingTime/@sap:label}"/>
+		<table:customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "ToolingTime", "leadingProperty":"ToolingTime", "columnIndex" : "34", "filterProperty": "ToolingTime", "sortProperty": "ToolingTime"}'/>
+		</table:customData>
+		<table:template>
+			<smartfield:SmartField value="{ToolingTime}" editable="{= !${Delete_Ind} &amp;&amp; ${ui>/editable} }" textAlign="End"/>
+		</table:template>
+	</table:Column>
+
+    <!-- Quota -->
+    <table:Column id="idCompQuotaColumn" filterProperty="Quota" sortProperty="Quota" width="10rem" hAlign="End">
+		<Label id="idQuotaLabel" text="{/#xVWKSxNLP_C_PMAT_TechChg_ComTPType/Quota/@sap:label}"/>
+		<table:customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "Quota", "leadingProperty":"Quota", "columnIndex" : "36", "filterProperty": "Quota", "sortProperty": "Quota"}'/>
+		</table:customData>
+		<table:template>
+			<smartfield:SmartField value="{Quota}" editable="{= !${Delete_Ind} &amp;&amp; ${ui>/editable} }" textAlign="End"/>
+		</table:template>
+	</table:Column>
+</core:FragmentDefinition>

@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:smarttable="sap.ui.comp.smarttable" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:core="sap.ui.core">
+	<Dialog contentWidth="80%" contentHeight="60%" title="{i18n>NotifyDevelopmentEmailDialogTitle}" horizontalScrolling="false" verticalScrolling="true" 
+	afterClose="onAfterCloseNotifyDialog">
+		<VBox fitContainer="true" class="sapUiSmallMargin">
+			<Label id="idToLabel" text="{i18n>To}" labelFor="idTo"/>
+			<Input id="idTo" class="sapUiSmallMarginBottom" type="Email" maxLength="60" liveChange="onToEmailChanged"/>
+			<Label id="idSubjectLabel" text="{i18n>Subject}" labelFor="idSubject"/>
+            <Input id="idSubject" class="sapUiSmallMarginBottom" value="{notifyDevelopmentModel>/EmailSubject}" enabled="false"/>
+            <Label id="idBodyLabel" text="{i18n>Body}" labelFor="idBody"/>
+            <TextArea id="idBody" class="sapUiSmallMarginBottom" value="{notifyDevelopmentModel>/EmailBody}" enabled="false" growing="true" width="100%"/>
+		</VBox>
+		<buttons>
+            <Button id="idNotifyDevelopmentBtn" text="{i18n>SendEmail}" enabled="{notifyDevelopmentModel>/enableSendEmail}" press="onNotifyDevelopmentSendEmail" tooltip="{i18n>SendEmail}"/>
+			<Button id="idCopyContractBundleBtn" text="{i18n>ProcessMultipleWorkItems}" enabled="{notifyDevelopmentModel>/enableProcessMultipleWorkItems}" press="onNotifyDevelopmentProcessMultipleWorkItems" tooltip="{i18n>ProcessMultipleWorkItems}"/>
+			<Button id="idCloseBtn" text="{i18n>Cancel}" press="onCloseNotifyDevelopmentPopup" tooltip="{i18n>Cancel}" />
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
